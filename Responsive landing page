@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #685A57;
+            color: #1EF5F0;
+            z-index: 1000;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #1EF5F0;
+            padding: 15px;
+            margin: 0 10px;
+        }
+
+        .navbar a:hover {
+            background-color: #ff6600;
+            transition: background-color 0.3s;
+            font-weight: bolder;
+        }
+
+        .content {
+            margin-top: 80px; /* Ensure content doesn't get hidden behind the navbar */
+            padding: 20px;
+        }
+
+        /* Scroll behavior */
+        .scrolled {
+            background-color: #FC8BF7;
+            color: #8BFCEC;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="content">
+        <!-- Your page content goes here -->
+        <h1>Welcome to Our Website</h1>
+        <p>This is a sample interactive navigation menu.</p>
+    </div>
+
+    <script>
+        // JavaScript to handle scrolling and style changes
+        window.addEventListener("scroll", function() {
+            const navbar = document.getElementById("navbar");
+
+            if (window.scrollY > 5) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
+</html>
